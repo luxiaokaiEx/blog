@@ -132,7 +132,7 @@ public class AdminController {
 
 测试  http://localhost:8080/admin/demo ,会跳转到
 
-![image-20201122135306736](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122135306736.png)
+![image-20201122135306736](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122135306736.png)
 
 DefaultLoginPageGeneratingFilter#generateLoginPageHtml
 
@@ -142,7 +142,7 @@ DefaultLoginPageGeneratingFilter#generateLoginPageHtml
 
 登录之后跳转到：
 
-![image-20201122135541505](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122135541505.png)
+![image-20201122135541505](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122135541505.png)
 
 #### 设置用户名密码
 
@@ -189,7 +189,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 }
 ```
 
-![image-20201207220553381](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201207220553381.png)Spring security5中新增加了加密方式，并把原有的spring security的密码存储格式改了，修改后的密码存储格式为：
+![image-20201207220553381](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201207220553381.png)Spring security5中新增加了加密方式，并把原有的spring security的密码存储格式改了，修改后的密码存储格式为：
 
 ```html
 {id}encodedPassword
@@ -201,7 +201,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 支持的加密方式可以通过PasswordEncoderFactories查看
 
-![image-20201207220650616](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201207220650616.png)
+![image-20201207220650616](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201207220650616.png)
 
 也可以通过增加PasswordEncoder配置指定加密方式
 
@@ -268,9 +268,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 >
 > spring-boot-autoconfigure-2.3.5.RELEASE.jar!/META-INF/spring.factories 下 SecurityAutoConfiguration
 >
-> ![image-20201122151919204](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122151919204.png)
+> ![image-20201122151919204](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122151919204.png)
 >
-> ![image-20201122152100937](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122152100937.png)
+> ![image-20201122152100937](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122152100937.png)
 >
 > 如果引入的是spring-security-config和spring-security-web依赖，则需要添加@EnableWebSecurity注解。
 
@@ -577,11 +577,11 @@ protected void configure(HttpSecurity http) throws Exception {
 
 访问/admin/demo直接返回结果，不用认证
 
-![image-20201208173350417](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208173350417.png)
+![image-20201208173350417](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208173350417.png)
 
 访问/admin/index跳转到自定义登录界面
 
-![image-20201208173435353](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208173435353.png)
+![image-20201208173435353](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208173435353.png)
 
 常见问题：
 
@@ -633,7 +633,7 @@ public class LoginController {
 - passwordParameter ：密码参数名
 - postOnly=true ：默认情况下只允许POST请求  
 
-![image-20201209150134410](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201209150134410.png)
+![image-20201209150134410](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201209150134410.png)
 
 可以通过usernameParameter和passwordParameter设置，必须保证和前端表单的name值一致
 
@@ -645,7 +645,7 @@ http.formLogin() //表单提交
 
 ##### 自定义登录成功处理器
 
-![image-20201209150407093](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201209150407093.png)
+![image-20201209150407093](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201209150407093.png)
 
 比如想实现登录成功后重定向其他页面，可以利用AuthenticationSuccessHandler接口实现自定义的认证成功控制器。
 
@@ -673,7 +673,7 @@ http.formLogin() //表单提交
 
 ##### 自定义登录失败处理器
 
-![image-20201209150741135](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201209150741135.png)
+![image-20201209150741135](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201209150741135.png)
 
 同样的，当登录认证失败后，想做一些事情，可以实现AuthenticationFailureHandler接口。
 
@@ -752,7 +752,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 默认情况下，Spring Security会为每个登录成功的用户会新建一个Session，就是ifRequired 。在执行认证过程之前，spring security将运行SecurityContextPersistenceFilter过滤器负责存储安全请求上下文，上下文根据策略进行存储，默认为HttpSessionSecurityContextRepository ，其使用http session作为存储器。
 
-![image-20201208220343701](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208220343701.png)
+![image-20201208220343701](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208220343701.png)
 
 ##### 会话超时
 
@@ -765,7 +765,7 @@ server.servlet.session.timeout=600s
 
 注意：session最低60s,参考源码TomcatServletWebServerFactory#configureSession：
 
-![image-20201214141852806](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201214141852806.png)
+![image-20201214141852806](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201214141852806.png)
 
 session超时之后，可以通过Spring Security 设置跳转的路径。  
 
@@ -832,7 +832,7 @@ http.sessionManagement()
 
 ##### 集群session
 
-![image-20201214154642460](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201214154642460.png)
+![image-20201214154642460](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201214154642460.png)
 
 实际场景中一个服务会至少有两台服务器在提供服务，在服务器前面会有一个nginx做负载均衡，用户访问nginx，nginx再决定去访问哪一台服务器。当一台服务宕机了之后，另一台服务器也可以继续提供服务，保证服务不中断。如果我们将session保存在Web容器(比如tomcat)中，如果一个用户第一次访问被分配到服务器1上面需要登录，当某些访问突然被分配到服务器二上，因为服务器二上没有用户在服务器一上登录的会话session信息，服务器二还会再次让用户登录，用户已经登录了还让登录就感觉不正常了。解决这个问题的思路是用户登录的会话信息不能再保存到Web服务器中，而是保存到一个单独的库(redis、mongodb、mysql等)中，所有服务器都访问同一个库，都从同一个库来获取用户的session信息，如用户在服务器一上登录，将会话信息保存到库中，用户的下次请求被分配到服务器二，服务器二从库中检查session是否已经存在，如果存在就不用再登录了，可以直接访问服务了。
 
@@ -954,7 +954,7 @@ Spring security默认实现了logout退出，用户只需要向 Spring Security 
 
 默认的退出 url 为 /logout ，退出成功后跳转到 /login?logout 。
 
-![image-20201210214711973](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201210214711973.png)
+![image-20201210214711973](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201210214711973.png)
 
 ##### 自定义退出逻辑
 
@@ -974,9 +974,9 @@ http.logout()
 - 清除认证状态
 - 跳转到 /login.html
 
-![image-20201210215007669](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201210215007669.png)
+![image-20201210215007669](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201210215007669.png)
 
-![image-20201210215126690](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201210215126690.png)
+![image-20201210215126690](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201210215126690.png)
 
 ##### LogoutSuccessHandler
 
@@ -1093,11 +1093,11 @@ class SampleAuthenticationManager implements AuthenticationManager {
 
 测试
 
-![image-20201208200034504](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208200034504.png)
+![image-20201208200034504](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208200034504.png)
 
 #### 认证流程
 
-![image-20201208211452732](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208211452732.png)
+![image-20201208211452732](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208211452732.png)
 
 #### 相关接口
 
@@ -1113,7 +1113,7 @@ public interface AuthenticationManager {
 }
 ```
 
-![image-20201122155855631](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122155855631.png)
+![image-20201122155855631](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122155855631.png)
 
 ###### ProviderManager
 
@@ -1129,11 +1129,11 @@ public interface AuthenticationProvider {
 }
 ```
 
-![image-20201126200723406](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201126200723406.png)
+![image-20201126200723406](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201126200723406.png)
 
 在Spring Security中，提交的用户名和密码，被封装成UsernamePasswordAuthenticationToken，而根据用户名加载用户的任务则是交给了UserDetailsService，在DaoAuthenticationProvider中，对应的方法便是retrieveUser，返回一个UserDetails。
 
-![image-20201126201659955](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201126201659955.png)
+![image-20201126201659955](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201126201659955.png)
 
 ##### Authentication
 
@@ -1143,7 +1143,7 @@ Authentication在spring security中是最高级别的身份/认证的抽象，�
 
 `UsernamePasswordAuthenticationToken`实现了 `Authentication`主要是将用户输入的用户名和密码进行封装，并供给 `AuthenticationManager` 进行验证；验证完成以后将返回一个认证成功的 `Authentication` 对象
 
-![image-20201122155559851](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122155559851.png)
+![image-20201122155559851](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122155559851.png)
 
 ```java
 public interface Authentication extends Principal, Serializable {
@@ -1192,7 +1192,7 @@ public interface UserDetailsService {
 
 Spring Security内置了两种 UserDetailsManager实现
 
-![image-20201122153045368](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122153045368.png)
+![image-20201122153045368](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122153045368.png)
 
 实际项目中，我们更多采用调用 `AuthenticationManagerBuilder#userDetailsService(userDetailsService)` 方法，使用自定义实现的 UserDetailsService实现类，更加灵活且自由的实现认证的用户信息的读取。
 
@@ -1209,7 +1209,7 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 用户信息核心接口，默认实现类org.springframework.security.core.userdetails.User
 
-![image-20201122164522165](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122164522165.png)
+![image-20201122164522165](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122164522165.png)
 
 ##### PasswordEncoder
 
@@ -1229,7 +1229,7 @@ public interface PasswordEncoder {
 }
 ```
 
-![image-20201122165915831](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201122165915831.png)
+![image-20201122165915831](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201122165915831.png)
 
 BCryptPasswordEncoder 是 Spring Security 官方推荐的密码解析器 。BCryptPasswordEncoder 是对 bcrypt 强散列方法的具体实现，是基于Hash算法实现的单向加密，可以通过strength控制加密强度，默认 10。
 
@@ -1253,7 +1253,7 @@ public void test(){
 法授权则拦截器为MethodSecurityInterceptor。如果同时通过web授权和方法授权则先执行web授权，再执行方
 法授权，最后决策通过，则允许访问资源，否则将禁止访问。    
 
-![image-20201208221510813](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201208221510813.png)
+![image-20201208221510813](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201208221510813.png)
 
 #### web授权
 
@@ -1413,7 +1413,7 @@ spring.mvc.servlet.path=/web
 
 否则报403错误
 
-![image-20201209220838888](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201209220838888.png)
+![image-20201209220838888](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201209220838888.png)
 
 ###### hasAnyAuthority(String ...)  
 
@@ -1490,7 +1490,7 @@ https://docs.spring.io/spring-security/site/docs/5.2.7.RELEASE/reference/htmlsin
 
 表达式根对象的基类是SecurityExpressionRoot，提供了一些在web和方法安全性中都可用的通用表达式。
 
-![image-20201210142549262](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201210142549262.png)
+![image-20201210142549262](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201210142549262.png)
 
 可以通过 access() 实现和之前学习的权限控制完成相同的功能。  
 
@@ -1782,7 +1782,7 @@ public class DemoController {
 
 ##### 基于Filter
 
-![image-20201209161112468](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201209161112468.png)
+![image-20201209161112468](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201209161112468.png)
 
 1. 拦截请求，已认证用户访问受保护的web资源将被SecurityFilterChain中的 FilterSecurityInterceptor 的子
    类拦截。
@@ -1843,7 +1843,7 @@ public interface AccessDecisionManager {
 }
 ```
 
-![image-20201128210546625](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201128210546625.png)
+![image-20201128210546625](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201128210546625.png)
 
 ###### AffirmativeBased
 
@@ -1894,7 +1894,7 @@ public interface AccessDecisionVoter<S> {
 }
 ```
 
-![image-20201128210531899](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201128210531899.png)
+![image-20201128210531899](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201128210531899.png)
 
 
 
@@ -1920,7 +1920,7 @@ public Object invoke(MethodInvocation mi) throws Throwable {
 }
 ```
 
-![image-20201129142101846](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201129142101846.png)
+![image-20201129142101846](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201129142101846.png)
 
 ## 3.Spring Security实现原理
 
@@ -1949,13 +1949,13 @@ public @interface EnableWebSecurity {
 }
 ```
 
-![image-20201127142445956](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201127142445956.png)
+![image-20201127142445956](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201127142445956.png)
 
 ##### WebSecurityConfigurerAdapter
 
 WebSecurityConfigurerAdapter中我们可以选择自己想要修改的内容，来进行重写
 
-![image-20201127143317046](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201127143317046.png)
+![image-20201127143317046](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201127143317046.png)
 
 ###### HttpSecurity
 
@@ -2072,11 +2072,11 @@ public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
 
 Spring Security本质是一个过滤器链
 
-![image-20201128195731608](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201128195731608.png)
+![image-20201128195731608](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201128195731608.png)
 
 认证的调用栈
 
-<img src="https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201127192610831.png" alt="image-20201127192610831" style="zoom:200%;" />
+<img src="https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201127192610831.png" alt="image-20201127192610831" style="zoom:200%;" />
 
 
 
@@ -2084,7 +2084,7 @@ Spring Security本质是一个过滤器链
 
 https://docs.spring.io/spring-security/site/docs/5.3.4.RELEASE/reference/html5/#servlet-filterchainproxy
 
-![image-20201123153124107](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201123153124107.png)
+![image-20201123153124107](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201123153124107.png)
 
 ##### SecurityFilterChain
 

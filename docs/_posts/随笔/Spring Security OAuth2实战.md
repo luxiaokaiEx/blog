@@ -55,11 +55,11 @@ OAuth协议：https://tools.ietf.org/html/rfc6749
 - 用户只有修改密码，才能收回赋予"云冲印"的权力。但是这样做，会使得其他所有获得用户授权的第三方应用程序全部失效。
 - 只要有一个第三方应用程序被破解，就会导致用户密码泄漏，以及所有被密码保护的数据泄漏。
 
-![image-20201130154911256](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201130154911256.png)
+![image-20201130154911256](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201130154911256.png)
 
 京东微信登录
 
-![image-20201215200325581](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201215200325581.png)
+![image-20201215200325581](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201215200325581.png)
 
 https://www.processon.com/view/link/5fc4a242079129329898f55d
 
@@ -105,7 +105,7 @@ OAuth在"客户端"与"服务提供商"之间，设置了一个授权层（autho
 
 OAuth 2.0的运行流程如下图，摘自RFC 6749：
 
-![OAuth运行流程](https://gitee.com/lxk_kaige/blogImage/raw/master/img/6a92a862da97a4692c755c7e186dfd07.jpg)
+![OAuth运行流程](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/6a92a862da97a4692c755c7e186dfd07.jpg)
 
 （A）用户打开客户端以后，客户端要求用户给予授权。
 
@@ -144,7 +144,7 @@ OAuth 2.0的运行流程如下图，摘自RFC 6749：
 
 不管哪一种授权方式，第三方应用申请令牌之前，都必须先到系统备案，说明自己的身份，然后会拿到两个身份识别码：客户端 ID（client ID）和客户端密钥（client secret）。这是为了防止令牌被滥用，没有备案过的第三方应用，是不会拿到令牌的。
 
-![image-20201203142134351](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203142134351.png)
+![image-20201203142134351](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203142134351.png)
 
 
 
@@ -156,7 +156,7 @@ OAuth 2.0的运行流程如下图，摘自RFC 6749：
 
 适用场景：目前市面上主流的第三方验证都是采用这种模式
 
-![授权码模式](https://gitee.com/lxk_kaige/blogImage/raw/master/img/8a16a81fbba3d6ba1002921bf6b4feff.jpg)
+![授权码模式](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/8a16a81fbba3d6ba1002921bf6b4feff.jpg)
 
 它的步骤如下：
 
@@ -237,7 +237,7 @@ token保存在服务端
 
 这种方式把令牌直接传给前端，是很不安全的。因此，只能用于一些安全要求不高的场景，并且令牌的有效期必须非常短，通常就是会话期间（session）有效，浏览器关掉，令牌就失效了。
 
-![简化模式](https://gitee.com/lxk_kaige/blogImage/raw/master/img/202e8e80d8b1740f38bde7a3d889e088.jpg)
+![简化模式](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/202e8e80d8b1740f38bde7a3d889e088.jpg)
 
 它的步骤如下：
 
@@ -283,7 +283,7 @@ token保存在服务端
 
 适用场景：自家公司搭建的授权服务器
 
-![密码模式](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1e7d96e9ed5ab025afd37c1ca97d1b39.jpg)
+![密码模式](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1e7d96e9ed5ab025afd37c1ca97d1b39.jpg)
 
 它的步骤如下：
 
@@ -310,7 +310,7 @@ token保存在服务端
 
 http://localhost:8080/oauth/token?username=fox&password=123456&grant_type=password&scope=select&client_id=client_2&client_secret=123456
 
-![image-20201203145929660](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203145929660.png)
+![image-20201203145929660](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203145929660.png)
 
 
 
@@ -320,7 +320,7 @@ http://localhost:8080/oauth/token?username=fox&password=123456&grant_type=passwo
 
 **适用于没有前端的命令行应用，即在命令行下请求令牌。**一般用来提供给我们完全信任的服务器端服务。
 
-![客户端模式](https://gitee.com/lxk_kaige/blogImage/raw/master/img/062fff24b9564ca9e0cbf4f702af9ee6.jpg)
+![客户端模式](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/062fff24b9564ca9e0cbf4f702af9ee6.jpg)
 
 它的步骤如下：
 
@@ -343,7 +343,7 @@ http://localhost:8080/oauth/token?username=fox&password=123456&grant_type=passwo
 
 http://localhost:8080/oauth/token?grant_type=client_credentials&scope=select&client_id=client_1&client_secret=123456
 
-![image-20201203150217282](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203150217282.png)
+![image-20201203150217282](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203150217282.png)
 
 ### 2.2 令牌的使用
 
@@ -359,13 +359,13 @@ A 网站拿到令牌以后，就可以向 B 网站的 API 请求数据了。
 
 测试
 
-![image-20201216150144206](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216150144206.png)
+![image-20201216150144206](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216150144206.png)
 
 ### 2.3 更新令牌
 
 令牌的有效期到了，如果让用户重新走一遍上面的流程，再申请一个新的令牌，很可能体验不好，而且也没有必要。OAuth 2.0 允许用户自动更新令牌。
 
-![image-20201215211216014](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201215211216014.png)
+![image-20201215211216014](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201215211216014.png)
 
 具体方法是，B 网站颁发令牌的时候，一次性颁发两个令牌，一个用于获取数据，另一个用于获取新的令牌（refresh token 字段）。令牌到期前，用户使用 refresh token 发一个请求，去更新令牌。
 
@@ -380,13 +380,13 @@ A 网站拿到令牌以后，就可以向 B 网站的 API 请求数据了。
 
 测试
 
-![image-20201217152549963](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217152549963.png)
+![image-20201217152549963](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217152549963.png)
 
 ## 3. Spring Security OAuth2快速开始
 
 ### 3.1 授权服务器
 
-![image-20201215213834183](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201215213834183.png)
+![image-20201215213834183](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201215213834183.png)
 
 - Authorize Endpoint ：授权端点，进行授权
 - Token Endpoint ：令牌端点，经过授权拿到对应的Token
@@ -395,7 +395,7 @@ A 网站拿到令牌以后，就可以向 B 网站的 API 请求数据了。
 
 ### 3.2 整体架构  
 
-![image-20201215214235657](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201215214235657.png)
+![image-20201215214235657](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201215214235657.png)
 
 流程：
 
@@ -548,19 +548,19 @@ http://localhost:8080/oauth/authorize?response_type=code&client_id=client&redire
 
 登录之后进入
 
-![image-20201216143931170](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216143931170.png)
+![image-20201216143931170](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216143931170.png)
 
 选择Approve，点击授权获取授权码
 
-![image-20201216145352741](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216145352741.png)
+![image-20201216145352741](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216145352741.png)
 
 #### 获取令牌  
 
 根据授权码通过post请求获取
 
-![image-20201216144557107](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216144557107.png)
+![image-20201216144557107](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216144557107.png)
 
-![image-20201216145247838](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216145247838.png)
+![image-20201216145247838](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216145247838.png)
 
 grant_type ：授权类型，填写authorization_code，表示授权码模式
 code ：授权码，就是刚刚获取的授权码，注意：授权码只使用一次就无效了，需要重新申请。
@@ -573,11 +573,11 @@ scope :授权范围。
 
 根据token去资源服务器获取资源  
 
-![image-20201216150014751](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201216150014751.png)
+![image-20201216150014751](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201216150014751.png)
 
 或者
 
-![image-20201218171707978](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218171707978.png)
+![image-20201218171707978](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218171707978.png)
 
 或者
 
@@ -587,7 +587,7 @@ scope :授权范围。
 
 authorizedGrantType添加implicit
 
-![image-20201218170035593](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218170035593.png)
+![image-20201218170035593](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218170035593.png)
 
 测试
 
@@ -595,7 +595,7 @@ http://localhost:8080/oauth/authorize?client_id=client&response_type=token&scope
 
 登录之后进入授权页面，确定授权后浏览器会重定向到指定路径，并以Hash的形式存放在重定向uri的fargment中：  
 
-![image-20201218170304155](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218170304155.png)
+![image-20201218170304155](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218170304155.png)
 
 ### 3.5 密码模式
 
@@ -702,19 +702,19 @@ public class AuthorizationServerConfig2 extends AuthorizationServerConfigurerAda
 
 http://localhost:8080/oauth/token?username=fox&password=123456&grant_type=password&client_id=client&client_secret=123123&scope=all
 
-![image-20201217140407004](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217140407004.png)
+![image-20201217140407004](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217140407004.png)
 
 通过Postman测试
 
-![image-20201217134835615](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217134835615.png)
+![image-20201217134835615](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217134835615.png)
 
-![image-20201217134909262](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217134909262.png)
+![image-20201217134909262](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217134909262.png)
 
 
 
 #### 访问资源
 
-![image-20201217134924855](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217134924855.png)
+![image-20201217134924855](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217134924855.png)
 
 
 
@@ -722,7 +722,7 @@ http://localhost:8080/oauth/token?username=fox&password=123456&grant_type=passwo
 
 #### 获取令牌
 
-![image-20201217141601406](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217141601406.png)
+![image-20201217141601406](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217141601406.png)
 
 ### 3.7 更新令牌
 
@@ -784,7 +784,7 @@ public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
 通过密码模式测试
 
-![image-20201217150502778](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217150502778.png)
+![image-20201217150502778](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217150502778.png)
 
 http://localhost:8080/oauth/token?grant_type=refresh_token&client_id=client&client_secret=123123&refresh_token=dc03bdc2-ca3b-4690-9265-d31a21896d02
 
@@ -854,13 +854,13 @@ public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws E
 
 #### AuthorizationServerEndpointsConfigurer
 
-![image-20201231162001338](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201231162001338.png)
+![image-20201231162001338](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201231162001338.png)
 
 #### TokenEndpoint&AuthorizationEndpoint
 
 OAuth2的接口
 
-![image-20201231192617834](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201231192617834.png)
+![image-20201231192617834](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201231192617834.png)
 
 #### FrameworkEndpointHandlerMapping
 
@@ -931,7 +931,7 @@ public Authentication attemptAuthentication(HttpServletRequest request, HttpServ
 
 #### ==AuthenticationManager==
 
-![image-20201203151658733](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203151658733.png)
+![image-20201203151658733](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203151658733.png)
 
 在ClientDetailsUserDetailsService中将client客户端的信息（client_id,client_secret）封装成用户的信息(username,password)
 
@@ -967,7 +967,7 @@ public class TokenEndpoint extends AbstractEndpoint {
 
 #### TokenGranter
 
-![TokenGranter](https://gitee.com/lxk_kaige/blogImage/raw/master/img/TokenGranter.png)
+![TokenGranter](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/TokenGranter.png)
 
 TokenGranter的设计思路是使用CompositeTokenGranter管理一个List列表，每一种grantType对应一个具体的真正授权者，CompositeTokenGranter 内部就是在循环调用五种TokenGranter实现类的grant方法，而granter内部则是通过grantType来区分是否是各自的授权类型。
 
@@ -1017,7 +1017,7 @@ public interface AuthorizationServerTokenServices {
 
 #### TokenStore
 
-![image-20201203155554758](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203155554758.png)
+![image-20201203155554758](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203155554758.png)
 
 
 
@@ -1079,7 +1079,7 @@ public void configure(HttpSecurity http) throws Exception {
 
 http://localhost:8080/order/1?access_token=a4e4ccb0-9a51-479a-a86c-376410fd0c00
 
-![image-20201203192221533](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203192221533.png)
+![image-20201203192221533](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203192221533.png)
 
 ```java
 public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain){
@@ -1152,7 +1152,7 @@ public interface TokenExtractor {
 
 #### ==OAuth2AuthenticationManager==
 
-![image-20201203194209686](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201203194209686.png)
+![image-20201203194209686](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201203194209686.png)
 
 ```java
 public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -1202,7 +1202,7 @@ HTTP Basic Auth简单点说明就是每次请求API时都提供用户的username
 
 Cookie认证机制就是为一次请求认证在服务端创建一个Session对象，同时在客户端的浏览器端创建了一个Cookie对象；通过客户端带上来Cookie对象来与服务器端的session对象匹配来实现状态管理的。默认的，当我们关闭浏览器的时候，cookie会被删除。但可以通过修改cookie 的expire time使cookie在一定时间内有效。  
 
-![image-20201217212740455](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217212740455.png)
+![image-20201217212740455](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217212740455.png)
 
 
 
@@ -1228,7 +1228,7 @@ OAuth（开放授权,Open Authorization）是一个开放的授权标准，允�
 5. 客户端每次向服务端请求资源的时候需要带着服务端签发的 Token
 6. 服务端收到请求，然后去验证客户端请求里面带着的 Token，如果验证成功，就向客户端返回请求的数据  
 
-![image-20201217214251403](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201217214251403.png)
+![image-20201217214251403](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201217214251403.png)
 
 比第一种方式更安全，比第二种方式更节约服务器资源，比第三种方式更加轻量。
 Token Auth的优点：
@@ -1268,7 +1268,7 @@ JWT令牌的优点：
 
 一个JWT实际上就是一个字符串，它由三部分组成，头部（header）、载荷（payload）与签名（signature）。
 
-![image-20201218143315750](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218143315750.png)
+![image-20201218143315750](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218143315750.png)
 
 ##### 头部（header）
 
@@ -1371,7 +1371,7 @@ fetch('api/user/1', {
 
 服务端会验证token，如果验证通过就会返回相应的资源。整个流程就是这样的:
 
-![img](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1821058-2e28fe6c997a60c9.png)
+![img](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1821058-2e28fe6c997a60c9.png)
 
 
 
@@ -1449,21 +1449,21 @@ public void testParseToken(){
 }
 ```
 
-![image-20201218151110923](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218151110923.png)
+![image-20201218151110923](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218151110923.png)
 
 试着将token或签名秘钥篡改一下，会发现运行时就会报错，所以解析token也就是验证token  
 
-![image-20201218151233704](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218151233704.png)
+![image-20201218151233704](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218151233704.png)
 
 ##### token过期校验
 
 有很多时候，我们并不希望签发的token是永久生效的，所以我们可以为token添加一个过期时间。原因：从服务器发出的token，服务器自己并不做记录，就存在一个弊端：服务端无法主动控制某个token的立刻失效。  
 
-![image-20201218151837566](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218151837566.png)
+![image-20201218151837566](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218151837566.png)
 
 当未过期时可以正常读取，当过期时会引发io.jsonwebtoken.ExpiredJwtException异常。  
 
-![image-20201218152028535](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218152028535.png)
+![image-20201218152028535](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218152028535.png)
 
 ##### 自定义claims
 
@@ -1527,7 +1527,7 @@ public void testParseToken(){
 
 结果
 
-![image-20201218152706232](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218152706232.png)
+![image-20201218152706232](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218152706232.png)
 
 
 
@@ -1571,15 +1571,15 @@ public class JwtTokenStoreConfig {
 
 在授权服务器配置中指定令牌的存储策略为JWT  
 
-![image-20201218161615656](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218161615656.png)
+![image-20201218161615656](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218161615656.png)
 
 用密码模式测试
 
-![image-20201218161857923](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218161857923.png)
+![image-20201218161857923](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218161857923.png)
 
 发现获取到的令牌已经变成了JWT令牌，将access_token拿到https://jwt.io/ 网站上去解析下可以获得其中内容。  
 
-![image-20201218162108496](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218162108496.png)
+![image-20201218162108496](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218162108496.png)
 
 
 
@@ -1637,7 +1637,7 @@ public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws E
 
 运行项目后使用密码模式来获取令牌，之后对令牌进行解析，发现已经包含扩展的内容。  
 
-![image-20201218164043919](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218164043919.png)
+![image-20201218164043919](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218164043919.png)
 
 #### 解析JWT
 
@@ -1675,7 +1675,7 @@ public Object getCurrentUser(Authentication authentication,
 将令牌放入Authorization头中，访问如下地址获取信息：
 http://localhost:8080/user/getCurrentUser  
 
-![image-20201218164842632](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218164842632.png)
+![image-20201218164842632](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218164842632.png)
 
 
 
@@ -1683,7 +1683,7 @@ http://localhost:8080/user/getCurrentUser
 
  http://localhost:8080/oauth/token?grant_type=refresh_token&client_id=client&client_secret=123123&refresh_token=[refresh_token值]
 
-![image-20201218173232497](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218173232497.png)
+![image-20201218173232497](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218173232497.png)
 
 ## 6. Spring Secuirty Oauth2实现SSO
 
@@ -1693,7 +1693,7 @@ http://localhost:8080/user/getCurrentUser
 
 web应用采用browser/server架构，http作为通信协议。http是无状态协议，浏览器的每一次请求，服务器会独立处理，不与之前或之后的请求产生关联，这个过程用下图说明，三次请求/响应对之间没有任何联系。
 
-![3c91a3bf-25d8-4b1f-8e4a-68535c51aaa8](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155231912-1627010726.png)
+![3c91a3bf-25d8-4b1f-8e4a-68535c51aaa8](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155231912-1627010726.png)
 
 但这也同时意味着，任何用户都能通过浏览器访问服务器资源，如果想保护服务器的某些资源，必须限制浏览器请求；要限制浏览器请求，必须鉴别浏览器请求，响应合法请求，忽略非法请求；要鉴别浏览器请求，必须清楚浏览器请求状态。既然http协议无状态，那就让服务器和浏览器共同维护一个状态吧！这就是会话机制。
 
@@ -1701,7 +1701,7 @@ web应用采用browser/server架构，http作为通信协议。http是无状态�
 
 浏览器第一次请求服务器，服务器创建一个会话，并将会话的id作为响应的一部分发送给浏览器，浏览器存储会话id，并在后续第二次和第三次请求中带上会话id，服务器取得请求中的会话id就知道是不是同一个用户了，这个过程用下图说明，后续请求与第一次请求产生了关联。
 
-![8a9fb230-d506-4b19-b821-4001c68c4588](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155233115-1744636093.png)
+![8a9fb230-d506-4b19-b821-4001c68c4588](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155233115-1744636093.png)
 
 服务器在内存中保存会话对象，浏览器怎么保存会话id？
 
@@ -1717,7 +1717,7 @@ web应用采用browser/server架构，http作为通信协议。http是无状态�
 
 使用了cookie的请求响应过程如下图
 
-![518293d9-64b2-459c-9d45-9f353c757d1f](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155234443-99011212.png)
+![518293d9-64b2-459c-9d45-9f353c757d1f](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155234443-99011212.png)
 
 #### 登录状态
 
@@ -1739,7 +1739,7 @@ session.getAttribute("isLogin");
 
 实现了登录状态的浏览器请求服务器模型如下图描述
 
-![70e396fa-1bf2-42f8-a504-ce20306e31fa](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155235693-1708276896.png)
+![70e396fa-1bf2-42f8-a504-ce20306e31fa](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155235693-1708276896.png)
 
 每次请求受保护资源时都会检查会话对象中的登录状态，只有 isLogin=true 的会话才能访问，登录机制因此而实现。
 
@@ -1747,15 +1747,15 @@ session.getAttribute("isLogin");
 
 web系统早已从久远的单系统发展成为如今由多系统组成的应用群，面对如此众多的系统，用户难道要一个一个登录、然后一个一个注销吗？就像下图描述的这样：
 
-![6dfbb0b1-46c0-4945-a3bf-5f060fa80710](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155236615-855014039.png)
+![6dfbb0b1-46c0-4945-a3bf-5f060fa80710](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155236615-855014039.png)
 
 web系统由单系统发展成多系统组成的应用群，复杂性应该由系统内部承担，而不是用户。无论web系统内部多么复杂，对用户而言，都是一个统一的整体，也就是说，用户访问web系统的整个应用群与访问单个系统一样，登录/注销只要一次就够了
 
-![9fe14ab3-4254-447b-b850-0436e628c254](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155237802-1969340065.png)
+![9fe14ab3-4254-447b-b850-0436e628c254](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155237802-1969340065.png)
 
 单系统登录解决方案的核心是cookie，cookie携带会话id在浏览器与服务器之间维护会话状态。但cookie是有限制的，这个限制就是cookie的域（通常对应网站的域名），浏览器发送http请求时会自动携带与该域匹配的cookie，而不是所有cookie
 
-![4d58ccfa-0114-486d-bec2-c28f2f9eb513](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155238881-1171826792.png)
+![4d58ccfa-0114-486d-bec2-c28f2f9eb513](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155238881-1171826792.png)
 
 既然这样，为什么不将web应用群中所有子系统的域名统一在一个顶级域名下，例如“*.baidu.com”，然后将它们的cookie域设置为“baidu.com”，这种做法理论上是可以的，甚至早期很多多系统登录就采用这种同域名共享cookie的方式。
 
@@ -1771,7 +1771,7 @@ web系统由单系统发展成多系统组成的应用群，复杂性应该由�
 
 　　相比于单系统登录，sso需要一个独立的认证中心，只有认证中心能接受用户的用户名密码等安全信息，其他系统不提供登录入口，只接受认证中心的间接授权。间接授权通过令牌实现，sso认证中心验证用户的用户名密码没问题，创建授权令牌，在接下来的跳转过程中，授权令牌作为参数发送给各个子系统，子系统拿到令牌，即得到了授权，可以借此创建局部会话，局部会话登录方式与单系统的登录方式相同。这个过程，也就是单点登录的原理，用下图说明：
 
-![img](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161203152650974-276822362.png)
+![img](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161203152650974-276822362.png)
 
 下面对上图简要描述
 
@@ -1800,7 +1800,7 @@ web系统由单系统发展成多系统组成的应用群，复杂性应该由�
 
 单点登录自然也要单点注销，在一个子系统中注销，所有子系统的会话都将被销毁，用下面的图来说明
 
-![img](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155242271-222889796.png)
+![img](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155242271-222889796.png)
 
 sso认证中心一直监听全局会话的状态，一旦全局会话销毁，监听器将通知所有注册系统执行注销操作
 
@@ -1817,7 +1817,7 @@ sso认证中心一直监听全局会话的状态，一旦全局会话销毁，�
 
 单点登录涉及sso认证中心与众子系统，子系统与sso认证中心需要通信以交换令牌、校验令牌及发起注销请求，因而子系统必须集成sso的客户端，sso认证中心则是sso服务端，整个单点登录过程实质是sso客户端与服务端通信的过程，用下图描述
 
-![fb29685c-487c-42b9-9ceb-6c7ee29e98c9](https://gitee.com/lxk_kaige/blogImage/raw/master/img/797930-20161129155244646-2067469767.png)
+![fb29685c-487c-42b9-9ceb-6c7ee29e98c9](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/797930-20161129155244646-2067469767.png)
 
 sso认证中心与sso客户端通信方式有多种，httpClient，web service、rpc、restful api都可以。
 
@@ -1915,7 +1915,7 @@ public class UserController {
 
 修改授权服务器中的AuthorizationServerConfig类，将绑定的跳转路径为http://localhost:8081/login，并添加获取秘钥时的身份认证
 
-  ![image-20201218205101642](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218205101642.png)
+  ![image-20201218205101642](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218205101642.png)
 
 ```java
  @Override
@@ -1959,11 +1959,11 @@ public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 访问客户端需要授权的接口http://localhost:8081/user/getCurrentUser
 会跳转到授权服务的登录界面；  
 
-![image-20201218205216686](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218205216686.png)
+![image-20201218205216686](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218205216686.png)
 
 授权后会跳转到原来需要权限的接口地址，展示登录用户信息  
 
-![image-20201218204857640](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201218204857640.png)
+![image-20201218204857640](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201218204857640.png)
 
 模拟两个客户端8081，8082
 
@@ -1989,7 +1989,7 @@ server.servlet.session.cookie.name=OAUTH2-CLIENT-SESSIONID${server.port}
 
 ### 6.5 Spring Cloud中如何实现SSO
 
-![image-20201231170245866](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20201231170245866.png)网关整合 OAuth2.0 有两种思路，一种是授权服务器生成令牌, 所有请求统一在网关层验证，判断权限等操作；另一种是由各资源服务处理，网关只做请求转发。  比较常用的是第一种，把API网关作为OAuth2.0的资源服务器角色，实现接入客户端权限拦截、令牌解析并转发当前登录用户信息给微服务，这样下游微服务就不需要关心令牌格式解析以及OAuth2.0相关机制了。  
+![image-20201231170245866](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20201231170245866.png)网关整合 OAuth2.0 有两种思路，一种是授权服务器生成令牌, 所有请求统一在网关层验证，判断权限等操作；另一种是由各资源服务处理，网关只做请求转发。  比较常用的是第一种，把API网关作为OAuth2.0的资源服务器角色，实现接入客户端权限拦截、令牌解析并转发当前登录用户信息给微服务，这样下游微服务就不需要关心令牌格式解析以及OAuth2.0相关机制了。  
 
 网关在认证授权体系里主要负责两件事：
 （1）作为OAuth2.0的资源服务器角色，实现接入方权限拦截。

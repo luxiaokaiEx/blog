@@ -61,7 +61,7 @@ yum install gcc-c++
 
 **默认情况下，redis安装完成后，一些常用的可执行程序在usr/local/bin下面**
 
-![image-20200908164220735](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200908164220735.png)
+![image-20200908164220735](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200908164220735.png)
 
 
 
@@ -151,7 +151,7 @@ getset   key    value  将给定 key 的值设为 value ，并返回 key 的旧�
 如果值全移除，对应的键也就消失了。
 链表的操作无论是头和尾效率都极高，但假如是对中间元素进行操作，效率就很惨淡了。
 
-![image-20200915112048560](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200915112048560.png)
+![image-20200915112048560](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200915112048560.png)
 
 Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素导列表的头部（左边）或者尾部（右边）。
 它的底层实际是个链表
@@ -712,7 +712,7 @@ redis cluster集群是一个由多个主从节点群组成的分布式服务器�
 
 #### 集群模式下，写操作如何进行保存
 
-![image-20200922175227916](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200922175227916.png)
+![image-20200922175227916](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200922175227916.png)
 
 ### 2.redis cluster集群搭建
 
@@ -949,7 +949,7 @@ rediscluster
 
 https://www.processon.com/diagraming/5f5f7bebe401fd2ad7df20a7
 
-![image-20200915094057560](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200915094057560.png)
+![image-20200915094057560](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200915094057560.png)
 
 ###### 第一个问题：**死锁**
 

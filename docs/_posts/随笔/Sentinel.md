@@ -38,7 +38,7 @@ sentinel的控制台只是配置接口的流控规则，但是他并不保存流
 
 ### QPS流控：
 
-![1598182040216](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598182040216.png)
+![1598182040216](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598182040216.png)
 
 qps： 每秒请求数 ，如上图所示，
 
@@ -48,7 +48,7 @@ qps： 每秒请求数 ，如上图所示，
 
 如果给qpsSentinel接口增加qps流控，单机阈值设置为1，则在一秒钟内只能处理一次请求的响应。
 
-![1598345770187](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598345770187.png)
+![1598345770187](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598345770187.png)
 
 ###### 排队等待：
 
@@ -56,7 +56,7 @@ qps： 每秒请求数 ，如上图所示，
 
 此时如果1秒钟内有10个请求打进来，根据漏桶算法规则，10个请求中一定会超时的请求会直接报错，而不再等待。
 
-![1598345901830](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598345901830.png)
+![1598345901830](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598345901830.png)
 
 ###### 预热：
 
@@ -66,7 +66,7 @@ qps： 每秒请求数 ，如上图所示，
 
 ### 线程流控：
 
-![1598337315985](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598337315985.png)
+![1598337315985](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598337315985.png)
 
 如上图所示，如果给threadSentinel接口增加线程流控，单机阈值设置为1，那么此接口在服务端只能用一个线程处理，如果连续发送两条请求，第一个请求还没有处理完，第二个请求就发送到了服务端，直接拒收
 
@@ -78,11 +78,11 @@ qps： 每秒请求数 ，如上图所示，
 
 ### 热点流控
 
-![1598493422025](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598493422025.png)
+![1598493422025](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598493422025.png)
 
 如上图所示配置的热点流控规则，如果访问test接口，没有传参数，那么这个流控规则对此次请求无效，如果传了参数，服务端在1s内接收到2个带参数的请求，就会触发流控（但是此种方法是一棒子打死的类型，只要你传了参数并符合流控的qps，就会触发）。
 
-![1598494238635](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598494238635.png)
+![1598494238635](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598494238635.png)
 
 如上图所示，这两个单机阈值是共存的，当请求接口的第一个参数为xxx出轨了，下面的单机阈值监听，当请求接口的第一个参数为其他时，上面的单机阈值监听，当没有参数时，针对此接口的整个热点规则不生效
 
@@ -98,7 +98,7 @@ qps： 每秒请求数 ，如上图所示，
 
 例如：当库存服务达到2qps，就限流订单服务。
 
-![1598701079851](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598701079851.png)
+![1598701079851](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598701079851.png)
 
 如上图所示的配置，
 
@@ -142,7 +142,7 @@ sentinel中将降级的自定义返回与熔断的自定义返回分开了，而
 
 #### 系统规则
 
-![1598494930905](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598494930905.png)
+![1598494930905](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598494930905.png)
 
 - LOAD：系统自适应，根据线程数来的，只支持linux/unix系统 （仅对 Linux/Unix-like 机器生效）：系统的 load1 作为启发指标，进行自适应系统保护。当系统 load1 超过设定的启发值，且系统当前的并发线程数超过估算的系统容量时才会触发系统保护（BBR 阶段）。系统容量由系统的 `maxQps * minRt` 估算得出。设定参考值一般是 `CPU cores * 2.5`。 
 
@@ -173,7 +173,7 @@ sentinel中将降级的自定义返回与熔断的自定义返回分开了，而
 
 与ribbon整合比较简单，注入RestTemplate并加入@LoadBalanced注解即可。
 
-![1598607497943](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598607497943.png)
+![1598607497943](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598607497943.png)
 
 
 
@@ -181,11 +181,11 @@ sentinel中将降级的自定义返回与熔断的自定义返回分开了，而
 
 与feign整合的话除了feign的必备的配置外，还需要增加
 
-![1598607551029](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598607551029.png)
+![1598607551029](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598607551029.png)
 
 
 
-![1598607754287](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1598607754287.png)
+![1598607754287](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1598607754287.png)
 
 
 

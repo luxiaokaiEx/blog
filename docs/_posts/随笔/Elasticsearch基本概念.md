@@ -192,19 +192,19 @@ Elasticsearch是面向文档的，文档是所有可搜索数据的最小单元�
 
 ****
 
-![image-20200923171148907](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200923171148907.png)
+![image-20200923171148907](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200923171148907.png)
 
 
 
 **3节点 4主分片 2分片副本配置**
 
-![image-20200923172448051](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200923172448051.png)
+![image-20200923172448051](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200923172448051.png)
 
 **4节点 4主分片 2分片副本配置**
 
 
 
-![image-20200923172230116](https://gitee.com/lxk_kaige/blogImage/raw/master/img/image-20200923172230116.png)
+![image-20200923172230116](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/image-20200923172230116.png)
 
 ##### 倒排索引
 

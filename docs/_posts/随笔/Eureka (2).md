@@ -455,7 +455,7 @@ shouldEnableSelfPreservation：是否开启了自我保护机制
 
 上面的registry为存放注册的微服务的map，分析一下此数据结构
 
-![1596460106974](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596460106974.png)
+![1596460106974](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596460106974.png)
 
 例如上图所示：有一个微服务集群，为订单服务（order），拆分成了3个微服务。
 
@@ -471,7 +471,7 @@ order_2：Lease<InstanceInfo>
 
 order_3：Lease<InstanceInfo>
 
-![1596460913123](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596460913123.png)
+![1596460913123](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596460913123.png)
 
 #### 配置生效
 
@@ -485,7 +485,7 @@ eureka与springcloud整合的jar包是org.springframework.cloud:spring-cloud-net
 
 在EurekaServerAutoConfiguration类中，初始化了Jersey的Filter，并将他放入到了servlet的Filter中，指定拦截请求/eureka/*
 
-![1596118597937](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596118597937.png)
+![1596118597937](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596118597937.png)
 
 
 
@@ -546,7 +546,7 @@ registry类图
 
 
 
-![1596119050683](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596119050683.png)
+![1596119050683](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596119050683.png)
 
 
 
@@ -680,11 +680,11 @@ public void register(InstanceInfo registrant, int leaseDuration, boolean isRepli
 
 服务端入口在com.netflix.eureka.resources.InstanceResource#renewLease方法，此方法处理客户端心跳续约的请求
 
-![1596458844779](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596458844779.png)
+![1596458844779](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596458844779.png)
 
 心跳续约将简单点，就是将租债器的最后操作时间戳更新。
 
-**但是此处有一个eureka的bug，在租债器中有一个判断实例是否过期的方法**<img src="https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596459563484.png" alt="1596459563484" style="zoom:200%;" />
+**但是此处有一个eureka的bug，在租债器中有一个判断实例是否过期的方法**<img src="https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596459563484.png" alt="1596459563484" style="zoom:200%;" />
 
 #### 服务下架
 
@@ -700,7 +700,7 @@ public void register(InstanceInfo registrant, int leaseDuration, boolean isRepli
 
 最后会将此实例从map中删除
 
-![1596547690845](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596547690845.png)
+![1596547690845](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596547690845.png)
 
 最后会将此实例对应的租债器的evictionTimestamp属性（服务被剔除的时间戳）设置为当前时间（此处不知道为什么？因为前面已经将他删除了）
 
@@ -718,19 +718,19 @@ ServletContextAware：spring环境初始化完成后，将ServletContext容器�
 
 主要的实现在org.springframework.cloud.netflix.eureka.server.EurekaServerInitializerConfiguration#start方法
 
-![1596549657229](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596549657229.png)
+![1596549657229](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596549657229.png)
 
 此处新开一个线程，去初始化eureka环境，如果报错，不影响主线程执行。
 
 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap#contextInitialized
 
-![1596549683540](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596549683540.png)
+![1596549683540](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596549683540.png)
 
 
 
 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap#initEurekaServerContext
 
-![1596549943239](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596549943239.png)
+![1596549943239](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596549943239.png)
 
 ```
 int registryCount = this.registry.syncUp();
@@ -741,7 +741,7 @@ int registryCount = this.registry.syncUp();
 
 com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl#syncUp
 
-![1596550135236](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596550135236.png)
+![1596550135236](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596550135236.png)
 
 ```java
 //同步并且注册的微服务实例数量
@@ -760,15 +760,15 @@ register(instance, instance.getLeaseInfo().getDurationInSecs(), true);
 
 在com.netflix.eureka.registry.AbstractInstanceRegistry#postInit方法中
 
-![1596550534837](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596550534837.png)
+![1596550534837](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596550534837.png)
 
 
 
 具体的剔除逻辑在com.netflix.eureka.registry.AbstractInstanceRegistry#evict(long)方法
 
-![1596551667630](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596551667630.png)
+![1596551667630](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596551667630.png)
 
-![1596551749494](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596551749494.png)
+![1596551749494](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596551749494.png)
 
 ```java
 // 判断是否已经触发了自我保护机制，如果触发就不再剔除过期服务
@@ -810,7 +810,7 @@ Random random = new Random(System.currentTimeMillis());
 
 唯一不同的是其中一个参数：isReplication 是否是集群同步请求
 
-![1596340149474](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596340149474.png)
+![1596340149474](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596340149474.png)
 
 
 
@@ -856,7 +856,7 @@ private void replicateToPeers(Action action, String appName, String id,
 
 1. 例如在服务注册时，当服务添加到ConcurrentHashMap中后，先更新客户端数量expectedNumberOfClientsSendingRenews，然后根据算法算出最新的自我保护机制阈值numberOfRenewsPerMinThreshold。
 
-![1596790057851](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596790057851.png)
+![1596790057851](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596790057851.png)
 
 
 
@@ -871,7 +871,7 @@ private void replicateToPeers(Action action, String appName, String id,
 
 
 
-![1596790261225](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596790261225.png)
+![1596790261225](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596790261225.png)
 
 
 
@@ -891,7 +891,7 @@ com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl#scheduleRenewalThresho
 
 com.netflix.eureka.registry.AbstractInstanceRegistry#evict(long) 
 
-![1596792905867](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596792905867.png)
+![1596792905867](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596792905867.png)
 
 
 
@@ -1008,13 +1008,13 @@ if (clientConfig.shouldFetchRegistry() && !fetchRegistry(false)) {
 
 在下面的截图中，eureka客户端初始化了心跳续约任务
 
-![1596983200284](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596983200284.png)
+![1596983200284](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596983200284.png)
 
 
 
 具体的逻辑在com.netflix.discovery.DiscoveryClient#renew方法，此方法就是发送了一个http请求到服务端。在客户端调用此方法，发送心跳续约请求后，流程就回到了上面介绍的eureka server心跳续约的介绍。
 
-![1596983565983](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596984249171.png)
+![1596983565983](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596984249171.png)
 
 
 
@@ -1062,7 +1062,7 @@ if (clientConfig.shouldFetchRegistry() && !fetchRegistry(false)) {
 
    com.netflix.discovery.DiscoveryClient#initScheduledTasks的cacheRefreshTask任务
 
-![1596984249171](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596984249171.png)
+![1596984249171](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596984249171.png)
 
 
 
@@ -1078,7 +1078,7 @@ if (clientConfig.shouldFetchRegistry() && !fetchRegistry(false)) {
 
 ##### 增量拉取
 
-![1596984545744](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596984545744.png)
+![1596984545744](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596984545744.png)
 
 ```java
 //客户端是否配置了禁用增量拉取
@@ -1105,11 +1105,11 @@ forceFullRegistryFetch
 
 增量数据拉取的具体逻辑：com.netflix.discovery.DiscoveryClient#getAndUpdateDelta
 
-![1596985240414](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596985240414.png)
+![1596985240414](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596985240414.png)
 
 
 
-![1596985559865](https://gitee.com/lxk_kaige/blogImage/raw/master/img/1596985559865.png)
+![1596985559865](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/1596985559865.png)
 
 
 

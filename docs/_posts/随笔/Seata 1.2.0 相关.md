@@ -17,7 +17,7 @@ author:
 
 
 
-![seata源码流程图](https://gitee.com/lxk_kaige/blogImage/raw/master/img/seata源码流程图.png)
+![seata源码流程图](https://lxkimages.oss-cn-beijing.aliyuncs.com/img/seata源码流程图.png)
 
 
 
