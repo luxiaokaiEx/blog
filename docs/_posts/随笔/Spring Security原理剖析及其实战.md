@@ -1367,13 +1367,13 @@ spring.mvc.servlet.path=/web
 
 ##### 内置的访问控制
 
-- 【常用】`#permitAll()` 方法，所有用户可访问。
+- 【常用】`#permitAll()` 方法，**登录能访问,不登录也能访问,一般用于静态资源js**。
 
 - 【常用】`#denyAll()` 方法，所有用户不可访问。
 
 - 【常用】`#authenticated()` 方法，登录用户可访问。
 
-- `#anonymous()` 方法，无需登录，即匿名用户可访问。
+- `#anonymous()` **匿名访问，仅允许匿名用户访问,如果登录认证后，带有token信息再去请求，这个anonymous()关联的资源就不能被访问**]。
 
 - `#rememberMe()` 方法，通过 remember me登录的用户可访问。
 
